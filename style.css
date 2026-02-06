@@ -1,0 +1,22 @@
+body{
+    width: 500px;
+    height: 100vh;
+    background-color: rgb(83, 33, 72);
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+.main{
+    font-weight: bold;
+    font-size: 30px;
+}
+p{
+    color: lightgray;
+}
+
+a{
+    text-decoration: none;
+    color: yellow;
+    font-size: 20px;
+}
