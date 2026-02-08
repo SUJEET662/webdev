@@ -4,21 +4,25 @@
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
+    
+<script src="script.js"></script>
 <body>
-    <h1>Login Page</h1>
+    <div class="login-container">
+        <form id="loginForm">
+            <h1>Login Page</h1>
+            <label for="username" class="l1">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <span id="emailError" style="color: red;"></span>
 
-    <form id="loginForm">
-        <label for="username" class="l1">Username:</label>
-        <input type="text" id="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <span id="passwordError" style="color: red;"></span>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" required><br><br>
+            <button type="submit" class="submitbutton">Submit</button>
+            <a href="index.html">Back</a>
+        </form>
+    </div>
+ 
 
-        <button type="button" class="submitbutton">Submit</button>
-        <a href="index.html">Back</a>
-    </form>
-
-    <script src="script.js"></script>
 </body>
 </html>
