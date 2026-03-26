@@ -34,40 +34,48 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false;
         }
 
-        else if (password.length< 6) {
+        else if (password.length < 6) {
             alert("Password must be at least 6 characters");
             isValid = false;
         }
 
         if (isValid) {
 
-            try{
-                const respose =await fetch("http://localhost:5000/signup", {
+            try {
+                const respose = await fetch("http://localhost:5000/signup", {
                     method: "POST",
                     headers: {
-                        "content-Type": "application/json"
+                        "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
                         name: name,
                         email: email,
                         password: password
                     })
-                });      
+                });
                 const data = await respose.json();
 
-                if(data.success){
+                if (data.success) {
+
+                    localStorage.setItem("token", data.token);
+                    localStorage.setItem("email", email);
+
+                    console.log("TOKEN:", data.token);
+
                     alert("Signup successful!");
+
+                    window.location.href = "login.html";
                 }
-                else{
+                else {
                     alert("Signup failed: " + data.message);
                 }
             }
-            catch(error){
+            catch (error) {
                 console.error("Error:", error);
                 alert("server error during signup");
             }
 
-            
+
             // localStorage.setItem("name", name);
             // localStorage.setItem("email", email);
             // localStorage.setItem("password", password);
