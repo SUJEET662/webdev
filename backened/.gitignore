@@ -9,3 +9,4 @@ pnpm-debug.log*
 server/uploads
 client/dist
 coverage
+users.json
